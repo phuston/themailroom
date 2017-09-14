@@ -1,20 +1,112 @@
 <!DOCTYPE html>
-<html>
+<!-- saved from url=(0049)https://www.amazon.com/gp/aw/s/ref=is_s?k=alcohol -->
+<html class="a-touch a-mobile a-js a-audio a-video a-canvas a-svg a-drag-drop a-geolocation a-history a-webworker a-autofocus a-input-placeholder a-textarea-placeholder a-local-storage a-touch a-gradients a-hires a-transform3d a-touch-scrolling a-android a-mobile a-text-shadow a-text-stroke a-box-shadow a-border-radius a-border-image a-opacity a-transform a-transition a-ember">
+<head>
+  <title>Amazon.com: Drinks</title>
+  <!-- META -->
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+  <meta content="width=device-width, maximum-scale=1, minimum-scale=1, initial-scale=1, user-scalable=no, shrink-to-fit=no" name="viewport">
+  <meta content="Amazon.com: Drinks" name="description">
+  <meta content="Drinks, Amazon.com" name="keywords">
+  <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport">
+  <!-- CSS -->
+  <link href="/static/css/amazon-css-dump.css" rel="stylesheet">
+  <link href="/static/css/custom.css" rel="stylesheet">
+  <!-- JQUERY -->
+  <script
+	  src="https://code.jquery.com/jquery-3.2.1.min.js"
+	  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+	  crossorigin="anonymous"></script>
+  <script type="text/javascript">
+  	$(function() {
+	  	$('.order-item').click(function() {
+	  		var orderName = $(this).data('order');
+
+	  		var confirmOrder = confirm('Do you want to order a "' + orderName + '"?');
+	  		if (confirmOrder) {
+	  			$.post('/order/' + orderName, function(res) {
+	  				$('#alert-message').fadeIn(1000).delay(5000).fadeOut(1000)
+	  			});
+	  		}
+	  	});
+  	})
+  </script>
+</head>
 <body>
+  <div id="alert-message">Your order has been received. You will get an email from Mailroom Services when it's ready!</div>
 
-<h1>this is the catalog</h1>
+  <div class="sx-page sx-active-page sx-animable" id="search" style="min-height: 640px;">
+    
+    {% include 'includes/header.html' %}
 
-<p>click on an item to order</p>
+    <div class="sx-content-panel" id="search-content">
+      <div class="a-container" id="results">
 
-<ul>
-	{% for item in catalog_list %}
-	<li> 
-		<form action="{{ "/order/{}".format(item.name) }}" method="post">
-      		{{ item.name }} <button type="submit">submit</button><br>
-    	</form>
-    </li>
-    {% endfor %}
-</ul>
+        <ul class="sx-result-table" id="resultItems">
 
+        	{% for item in catalog_list %}
+			<li class="sx-table-item order-item" data-order="{{ item.name }}">
+				
+				<div class="a-row a-spacing-small">
+	              <div class="a-row a-spacing-none sx-pinned-list-top-badge">
+	              	{% if item.details.best_seller is defined %}
+		            <span class="a-size-small aok-float-left sx-badge-rectangle sx-bestseller-color"><span class="sx-badge-text s-color-white">Best Seller</span></span><span class="aok-float-left sx-badge-triangle sx-bestseller-color"></span>
+		            {% elif item.details.choice is defined %}
+	                <span class="sx-certified-badge-container">
+	                	<span class="a-size-small aok-float-left sx-badge-rectangle sx-amazonschoice-color">	<span class="s-color-white sx-badge-text">{{ item.details.choice }} <span class="sx-amazonschoice-badge-rightwords">Choice</span></span>
+		                </span>
+		                <span class="aok-float-left sx-badge-triangle sx-amazonschoice-color"></span>
+					</span>
+					{% endif %}
+	              </div>
+	            </div>
+
+	            <div class="sx-table-row">
+	              <div class="sx-table-pic">
+	                <div class="sx-table-image-holder"><img alt="Product Details" class="sx-product-image" src="{{ item.url }}" style="max-height: 170px"></div>
+	              </div>
+	              <div class="sx-table-detail">
+	              	{% if item.details.sponsored is defined %}
+	                <h5 class="a-spacing-micro a-color-tertiary sx-title">Sponsored</h5>
+	                {% endif %}
+	                <h5 class="sx-title"><span class="a-size-base a-color-base">{{ item.name }}</span></h5>
+	                <div class="a-row a-spacing-micro a-size-small a-color-secondary">
+	                  <span>by</span> <span>1NE</span>
+	                </div>
+	                <div class="a-section a-spacing-micro">
+	                  <div class="a-row">
+	                    <span class="a-size-small a-color-price a-text-bold">$5 Admission</span><span class="a-letter-space"></span>
+	                  </div>
+	                  <div class="a-row">
+	                    <span class="a-size-small a-color-secondary">Get it by</span> <span class="a-size-small a-color-secondary a-text-bold">Friday, Sep 15</span>
+	                  </div>
+	                </div>
+	                <div class="a-icon-row a-size-small">
+	                  <i class="a-icon a-icon-star-medium a-star-medium-5"><span class="a-icon-alt">5 out of 5 stars</span></i>
+	                </div>
+	                <!-- <form action="{{ "/order/{}".format(item.name) }}" method="post" class="catalog-form">
+	                	<span id="submit.add-to-cart" class="a-button a-spacing-base a-button-primary a-button-icon">
+	                		<button class="a-button-inner" class="a-button-input a-declarative" type="submit" value="Add to Cart">
+	                			<span class="a-button-text" aria-hidden="true">
+	                				<i class="a-icon a-icon-cart"></i>
+	                			</span>
+	                		</button>
+	                	</span>
+			    	</form> -->
+	              </div>
+	            </div>
+	            <hr class="a-divider-normal">
+	        </li>
+        	{% endfor %}
+        
+        </ul> <!-- #################### END PRODUCT UL #################### -->
+
+      </div>
+    </div>
+
+	<!-- #################### FOOTER #################### -->
+    {% include 'includes/footer.html' %}
+
+  </div>
 </body>
 </html>
