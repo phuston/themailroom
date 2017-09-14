@@ -2,6 +2,8 @@ from flask import Flask, session, redirect, url_for, escape, request, render_tem
 from flask_mail import Mail, Message
 import json
 from threading import Thread
+import time
+import random
 
 from config import MAIL_ADDRESS
 
@@ -49,12 +51,37 @@ def complete():
 # Async email support
 def send_async_email(msg):
     with app.app_context():
+        time.sleep(random.randint(10,100))
         mail.send(msg)
 
 def send_email(recipients, order_name):
-    subject = "PACKAGE RECEIPT NOTIFICATION"
+    subject = "'PACKAGE' RECEIPT NOTIFICATION"
     msg = Message(subject, sender=MAIL_ADDRESS, recipients=recipients)
-    msg.body = "YO WHAT UP BITCH! You ordered {}".format(order_name)
+    msg.body = """
+    Your Package Has Arrived! You can pick your package up during open window
+    hours, which are posted outside the mailroom in the lower level of the Campus
+    Center.
+
+
+    Package Details:
+
+         Item Name...:  {}
+         Tracking No.:  FLDZZ05240600
+         Carrier.....:  United States Postal Service
+         Service.....:
+
+         Received From Carrier.....:  09/15/2017  1433
+         Signed For By.............:  BACKSUITE BOYS
+
+    Received From:
+
+         Company.....:
+         Address.....:
+         C/S/Z.......:
+
+         Contact.....:
+
+    """.format(order_name)
     thr = Thread(target=send_async_email, args=[msg])
     thr.start()
 
