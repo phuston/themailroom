@@ -52,7 +52,6 @@ def send_async_email(msg):
         mail.send(msg)
 
 def send_email(recipients, order_name):
-    print "MAIL ADDRESS {}".format(MAIL_ADDRESS)
     subject = "PACKAGE RECEIPT NOTIFICATION"
     msg = Message(subject, sender=MAIL_ADDRESS, recipients=recipients)
     msg.body = "YO WHAT UP BITCH! You ordered {}".format(order_name)
