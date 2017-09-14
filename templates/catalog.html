@@ -7,11 +7,13 @@
 <p>click on an item to order</p>
 
 <ul>
+	{% for item in catalog_list %}
 	<li> 
-		<form action="/order/lilbitch" method="post">
-      		the lil bitch <button type="submit">submit</button><br>
+		<form action="{{ "/order/{}".format(item.name) }}" method="post">
+      		{{ item.name }} <button type="submit">submit</button><br>
     	</form>
     </li>
+    {% endfor %}
 </ul>
 
 </body>
