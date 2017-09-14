@@ -1,0 +1,14 @@
+
+#alert-message {
+	display: none;
+    position: fixed;
+    top: 10px;
+    z-index: 9999;
+    background: #008a00;
+    color: white;
+    font-weight: 600;
+    padding: 2rem;
+    left: 10px;
+    right: 10px;
+    border-radius: 2px;
+}

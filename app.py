@@ -8,7 +8,7 @@ import random
 from config import MAIL_ADDRESS
 
 
-app = Flask(__name__)
+app = Flask(__name__, static_url_path='/static')
 app.secret_key = 'no one will ever guess this'
 app.config.from_object('config')
 mail = Mail(app)
