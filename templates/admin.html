@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>ADMIN PANEL</h1>
+<p>When drink is ready, complete the order to let them know.</p>
+
+<table style="width: 100%; text-align: left;">
+	<tr>
+		<th>Email</th>
+		<th>Drink</th>
+		<th>Confirmation</th>
+	</tr>
+	{% for item in orders %}
+	<tr>
+		<td>{{ item.email }}</td>
+		<td>{{ item.drink }}</td>
+		<td>
+			<form action="{{ "/admin/{}".format(item._id) }}" method="post">
+				<button type="submit">Ready for pickup</button>
+	    	</form>
+		</td>
+    </tr>
+    {% endfor %}
+</table>
+
+</body>
+</html>

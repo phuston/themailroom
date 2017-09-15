@@ -1,13 +1,13 @@
 [
 	{
-		"name": "let's be nice",
+		"name": "Rum & Coke",
 		"details": {
 			"sponsored": true
 		},
 		"url": "/static/images/fight-me.jpg"
 	},
 	{
-		"name": "the keenan sucks",
+		"name": "Vodka & Sprite",
 		"details": {
 			"sponsored": true,
 			"choice": "Brett's"

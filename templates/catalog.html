@@ -25,6 +25,9 @@
 	  		var confirmOrder = confirm('Do you want to order a "' + orderName + '"?');
 	  		if (confirmOrder) {
 	  			$.post('/order/' + orderName, function(res) {
+	  				res = JSON.parse(res)
+	  				$('#alert-message').attr('class', (res.success) ? "success" : "error")
+	  				$('#alert-message').html(res.message)
 	  				$('#alert-message').fadeIn(1000).delay(5000).fadeOut(1000)
 	  			});
 	  		}
@@ -33,7 +36,7 @@
   </script>
 </head>
 <body>
-  <div id="alert-message">Your order has been received. You will get an email from Mailroom Services when it's ready!</div>
+  <div id="alert-message"></div>
 
   <div class="sx-page sx-active-page sx-animable" id="search" style="min-height: 640px;">
     
