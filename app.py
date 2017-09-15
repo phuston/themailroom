@@ -4,6 +4,7 @@ import json
 from threading import Thread
 import time
 import random
+from datetime import datetime
 
 from config import MAIL_ADDRESS
 
@@ -51,11 +52,11 @@ def complete():
 # Async email support
 def send_async_email(msg):
     with app.app_context():
-        time.sleep(random.randint(10,100))
+        # time.sleep(random.randint(10,100))
         mail.send(msg)
 
 def send_email(recipients, order_name):
-    subject = "'PACKAGE' RECEIPT NOTIFICATION"
+    subject = "PACKAGE RECEIPT NOTIFICATION"
     msg = Message(subject, sender=MAIL_ADDRESS, recipients=recipients)
     msg.body = """
     Your Package Has Arrived! You can pick your package up during open window
@@ -66,11 +67,11 @@ def send_email(recipients, order_name):
     Package Details:
 
          Item Name...:  {}
-         Tracking No.:  FLDZZ05240600
-         Carrier.....:  United States Postal Service
+         Tracking No.:  {}
+         Carrier.....:  The 'Pony' Express ;)
          Service.....:
 
-         Received From Carrier.....:  09/15/2017  1433
+         Received From Carrier.....:  {}
          Signed For By.............:  BACKSUITE BOYS
 
     Received From:
@@ -81,7 +82,9 @@ def send_email(recipients, order_name):
 
          Contact.....:
 
-    """.format(order_name)
+    """.format(order_name,
+               ''.join(random.choice('0123456789ABCDEF') for i in range(16)),
+               datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
     thr = Thread(target=send_async_email, args=[msg])
     thr.start()
 
