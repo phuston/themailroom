@@ -5,36 +5,6 @@
 		"details": {
 		},
 		"url": "/static/images/water.jpg"
-	},
-	{
-		"name": "Just for Parents",
-		"description": "Wine",
-		"details": {
-			"choice": "Aidan's"
-		},
-		"url": "/static/images/parents.jpg"
-	},
-	{
-		"name": "Green Line",
-		"description": "Vodka & Orange Soda",
-		"details": {},
-		"url": "/static/images/green-line.jpg"
-	},
-	{
-		"name": "Olintastic",
-		"description": "Vodka & Coke",
-		"details": {
-			"best_seller": true
-		},
-		"url": "/static/images/tastic.jpg"
-	},
-	{
-		"name": "Olingasmic",
-		"description": "Vodka & Cherry Coke",
-		"details": {
-			"choice": "Brett's"
-		},
-		"url": "/static/images/olingasm.jpg"
 	}
 ]
 
