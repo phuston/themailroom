@@ -8,7 +8,7 @@
 	},
 	{
 		"name": "6 Week Rule",
-		"description": "Rum & Sprite",
+		"description": "Vodka & Sprite",
 		"details": {
 			"sponsored": true
 		},
@@ -24,7 +24,7 @@
 	},
 	{
 		"name": "Scavenger Hunt",
-		"description": "Rum & Orange Juice",
+		"description": "Vodka & Orange Juice",
 		"details": {
 			"choice": "Patrick's"
 		},
@@ -32,13 +32,13 @@
 	},
 	{
 		"name": "Green Line",
-		"description": "Rum & Orange Soda",
+		"description": "Vodka & Orange Soda",
 		"details": {},
 		"url": "/static/images/green-line.jpg"
 	},
 	{
 		"name": "Olintastic",
-		"description": "Rum & Coke",
+		"description": "Vodka & Coke",
 		"details": {
 			"best_seller": true
 		},
@@ -46,7 +46,7 @@
 	},
 	{
 		"name": "Olingasmic",
-		"description": "Rum & Cherry Coke",
+		"description": "Vodka & Cherry Coke",
 		"details": {
 			"choice": "Brett's"
 		},
@@ -54,7 +54,7 @@
 	},
 	{
 		"name": "Green Machine Training",
-		"description": "Rum & Ginger Ale",
+		"description": "Vodka & Ginger Ale",
 		"details": {
 		},
 		"url": "/static/images/drillpress.jpg"
