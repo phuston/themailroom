@@ -1,13 +1,33 @@
 <!DOCTYPE html>
 <html>
+<head>
+	<link href="/static/css/amazon-css-dump.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+</head>
 <body>
+	{% include 'includes/header-alt.html' %}
 
-    <h1>welcome to cocktail mail</h1>
-
-    <form action="/login" method="post">
-      enter your email to begin your order: <input type="email" name="emailAddress">
-      <button type="submit">submit</button><br>
-    </form>
-
+	<div class="container">
+		<div class="row" style="margin-top: 4rem;">
+			<div class="col-12 text-center">
+				<h1 style="font-size: 4rem; font-weight: 600;">Cocktail Mail</h1>
+			</div>
+			<div class="col-12">
+				<form class="row" action="/login" method="post">
+				  <div class="col-12">
+				  	<p style="font-size: 1.4rem;">Enter your email to begin your order:</p>
+				  </div>
+				  <div class="col-12">
+				  	<input class="form-control" type="email" name="emailAddress" placeholder="Email"><br>
+				    <button style="font-weight: 700; background: #f3ce72;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFF8E3AD', endColorstr='#FFEEBA37', GradientType=0);
+    background: linear-gradient(to bottom,#f8e3ad,#eeba37);
+    background: -moz-linear-gradient(top,#f8e3ad,#eeba37);
+    background: -webkit-linear-gradient(top,#f8e3ad,#eeba37); padding: 1.5rem 1rem;" class="form-control" type="submit">SUBMIT</button>
+				  </div>
+			    </form>
+			</div>
+		</div>
+	</div>
 </body>
 </html>

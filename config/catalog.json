@@ -1,24 +1,63 @@
 [
 	{
-		"name": "Rum & Coke",
+		"name": "Relationship Panel",
+		"description": "Vodka & Cranberry",
+		"details": {
+		},
+		"url": "/static/images/relationships.jpg"
+	},
+	{
+		"name": "6 Week Rule",
+		"description": "Vodka & Sprite",
 		"details": {
 			"sponsored": true
 		},
-		"url": "/static/images/fight-me.jpg"
+		"url": "/static/images/6week.jpg"
 	},
 	{
-		"name": "Vodka & Sprite",
+		"name": "Just for Parents",
+		"description": "Wine",
 		"details": {
-			"sponsored": true,
-			"choice": "Brett's"
+			"choice": "Aidan's"
 		},
-		"url": "/static/images/keenan.jpg"
+		"url": "/static/images/parents.jpg"
 	},
 	{
-		"name": "the keenan rocks",
+		"name": "Scavenger Hunt",
+		"description": "Vodka & Orange Juice",
+		"details": {
+			"choice": "Patrick's"
+		},
+		"url": "/static/images/scavenger.jpg"
+	},
+	{
+		"name": "Green Line",
+		"description": "Vodka & Orange Soda",
+		"details": {},
+		"url": "/static/images/green-line.jpg"
+	},
+	{
+		"name": "Olintastic",
+		"description": "Rum & Coke",
 		"details": {
 			"best_seller": true
 		},
-		"url": "/static/images/keenan.jpg"
+		"url": "/static/images/tastic.jpg"
+	},
+	{
+		"name": "Olingasmic",
+		"description": "Rum & Cherry Coke",
+		"details": {
+			"choice": "Brett's"
+		},
+		"url": "/static/images/olingasm.jpg"
+	},
+	{
+		"name": "Green Machine Training",
+		"description": "Rum & Ginger Ale",
+		"details": {
+		},
+		"url": "/static/images/drillpress.jpg"
 	}
 ]
+

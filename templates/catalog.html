@@ -48,7 +48,7 @@
         <ul class="sx-result-table" id="resultItems">
 
         	{% for item in catalog_list %}
-			<li class="sx-table-item order-item" data-order="{{ item.name }}">
+			<li class="sx-table-item order-item" data-order="{{ item.description }}">
 				
 				<div class="a-row a-spacing-small">
 	              <div class="a-row a-spacing-none sx-pinned-list-top-badge">
@@ -74,7 +74,7 @@
 	                {% endif %}
 	                <h5 class="sx-title"><span class="a-size-base a-color-base">{{ item.name }}</span></h5>
 	                <div class="a-row a-spacing-micro a-size-small a-color-secondary">
-	                  <span>by</span> <span>1NE</span>
+	                  <span>{{ item.description }}</span>
 	                </div>
 	                <div class="a-section a-spacing-micro">
 	                  <div class="a-row">

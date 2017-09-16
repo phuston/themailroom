@@ -37,6 +37,12 @@ def login():
     else:
         return render_template('login.html')
 
+@app.route('/logout', methods = ['GET'])
+def logout():
+    session.pop('email_address')
+    return redirect(url_for('login'))
+
+
 @app.route('/catalog', methods = ['GET'])
 def catalog():
     if 'email_address' in session:
