@@ -7,28 +7,12 @@
 		"url": "/static/images/water.jpg"
 	},
 	{
-		"name": "6 Week Rule",
-		"description": "Vodka & Sprite",
-		"details": {
-			"sponsored": true
-		},
-		"url": "/static/images/6week.jpg"
-	},
-	{
 		"name": "Just for Parents",
 		"description": "Wine",
 		"details": {
 			"choice": "Aidan's"
 		},
 		"url": "/static/images/parents.jpg"
-	},
-	{
-		"name": "Scavenger Hunt",
-		"description": "Vodka & Orange Juice",
-		"details": {
-			"choice": "Patrick's"
-		},
-		"url": "/static/images/scavenger.jpg"
 	},
 	{
 		"name": "Green Line",
@@ -51,13 +35,6 @@
 			"choice": "Brett's"
 		},
 		"url": "/static/images/olingasm.jpg"
-	},
-	{
-		"name": "Green Machine Training",
-		"description": "Vodka & Ginger Ale",
-		"details": {
-		},
-		"url": "/static/images/drillpress.jpg"
 	}
 ]
 
