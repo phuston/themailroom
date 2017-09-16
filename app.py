@@ -1,6 +1,7 @@
 from flask import Flask, session, redirect, url_for, escape, request, render_template
 from flask_mail import Mail, Message
 import json
+import os
 from threading import Thread
 import time
 from bson.objectid import ObjectId
@@ -10,7 +11,7 @@ from datetime import datetime
 
 from config import MAIL_ADDRESS
 
-CLIENT = MongoClient()
+CLIENT = MongoClient(os.environ.get('MONGODB_URI', 'localhost:27107'))
 DB = CLIENT.mailroom
 ORDERS = DB.orders
 
